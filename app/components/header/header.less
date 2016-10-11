@@ -1,0 +1,69 @@
+.header-container {
+  position: relative;
+  width: 100%;
+  -webkit-box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
+  -moz-box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
+  box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
+  background: #2dbe61;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
+  > div {
+    width: 93%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .text-logo {
+    color: #fff;
+    float: left;
+    margin-left: 0.5em;
+    width: 65%;
+    a{
+      color: #fff;
+    }
+
+    .user-name {
+      font-size: 3.1rem;
+      display: inline;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    > .blog-motto {
+      margin-left: 20px;
+      font-size: 110%;
+      display: inline;
+      font-weight: normal;
+    }
+  }
+
+  .nav-bar {
+    float: right;
+    width: auto;
+    margin-top: 0em;
+    max-height: none;
+    font-size: 112.5%;
+    line-height: 300%;
+    -webkit-transition: max-height 1s ease-out;
+    -moz-transition: max-height 1s ease-out;
+    transition: max-height 1s ease-out;
+
+    > ul {
+      float: right;
+      list-style: none;
+
+      > li {
+        float: left;
+
+        a {
+          color: #fff;
+          display: block;
+          padding: 0 1rem;
+          text-decoration: none;
+          &:hover {
+            color: #205632;
+          }
+        }
+      }
+    }
+  }
+}

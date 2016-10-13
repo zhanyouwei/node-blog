@@ -1,0 +1,116 @@
+@import "./../../less/variables";
+.article-details {
+  @media only screen and (min-width: 768px) {
+    > .article-info {
+      border-bottom: 1px solid #dbdbdb;
+    }
+  }
+  .article-info {
+    > h1 {
+      font-weight: bolder;
+      padding: 0.2rem 3%;
+      font-size: 170%;
+      line-height: 1.5;
+      word-wrap: break-word;
+      word-break: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      border-left: 5px solid #2e7044;
+      color: #2ca6cb;
+    }
+    @media only screen and (min-width: 1024px) {
+      > h1 {
+        font-size: 200%;
+        padding-top: 0.3rem;
+      }
+    }
+
+    > p.article-author {
+      padding: 0.3rem 4% 0.3rem 0;
+      text-align: right;
+      border-bottom: 1px solid #dbdbdb;
+      a {
+        color: #2ca6cb;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      > p.article-author {
+        float: right;
+        border-bottom: none;
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      > p.article-time {
+        float: right;
+        margin-right: 1rem;
+        padding-top: 0.1rem;
+        font-size: 0.9rem;
+      }
+    }
+    > p.article-time {
+      padding-top: 0.5rem;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+
+  .article-content {
+    padding: 1.5rem 4%;
+    white-space: pre-wrap;
+    font-size: 16px;
+    color: #444;
+    .coverImg {
+      text-align: center;
+    }
+  }
+
+  .messageBox {
+    margin: 30px 0;
+    padding: 1.5rem 4%;
+    h2 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+      color: #333;
+      margin-top: 50px;
+      &.messageEd {
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+      }
+    }
+    .btn {
+      width: 250px;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      background: @global-primary;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 50px;
+      margin-top: 20px;
+    }
+  }
+
+  span.author {
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
+  .messageItem {
+    border-bottom: 1px dashed #ccc;
+    padding: 10px 20px;
+  }
+
+  .messageContent {
+    margin: 10px;
+    font-size: 16px;
+  }
+
+  .messageTime {
+    text-align: right;
+  }
+
+}

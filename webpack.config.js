@@ -22,12 +22,12 @@ module.exports = {
     loaders: [
       { 
         test: /\.js$/, 
-        exclude: /node_modules/, 
-        loader: 'babel?presets[]=es2015&presets[]=react' 
+        exclude: /node_modules/,
+        loader: 'babel?presets[]=es2015&presets[]=react'
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/, 
+        exclude: /node_modules/,
         /*loader: "style!css!less",*/
         loader: ExtractTextPlugin.extract('style', 'css')
       },

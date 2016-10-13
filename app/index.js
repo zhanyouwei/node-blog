@@ -4,20 +4,21 @@
  * @date    2016-06-05 00:58:23
  * @version $Id$
  */
-import React,{Component} from 'react'
-import { render } from 'react-dom'
-import thunkMiddleware from 'redux-thunk'
-import {Provider,connect} from 'react-redux'
-import {combineReducers, createStore, applyMiddleware} from "redux"
-import { Router, Route, IndexRoute, Link, IndexLink, browserHistory,hashHistory } from 'react-router'
-import * as actions from './actions/index'
+import React,{Component} from 'react';
+import { render } from 'react-dom';
+import thunkMiddleware from 'redux-thunk';
+import {Provider,connect} from 'react-redux';
+import {combineReducers, createStore, applyMiddleware} from "redux";
+import { Router, Route, IndexRoute, Link, IndexLink, browserHistory,hashHistory } from 'react-router';
+import * as actions from './actions/index';
 
-import stores from './reducers/index'
-import Index from './components/index'
+import stores from './reducers/index';
+import Index from './components/index';
 
-import MobBox from './containers/mobBox'
-import Nav from './containers/nav'
-import TipsBox from './containers/tipsBox'
+import MobBox from './containers/mobBox';
+import Nav from './components/nav/nav';
+import TipsBox from './containers/tipsBox';
+import Footer from './components/footer/footer';
 
 import "./index.less"
 
@@ -89,16 +90,15 @@ class App extends Component {
 	render() {
 		return <div className="page">
 			<Nav/>
-			<div className="container content">{this.props.children || <Index/>}</div>
+			<div className="container">
+				<div className="content">{this.props.children || <Index/>}</div>
+			</div>
 			<MobBox />
-			<Foot/>
+			<Footer/>
 			<TipsBox/>
 		</div>
 	}
 }
-const Foot = ()=>(
-	<div className="Footer">Youwei zhanyouwei@icloud.com</div>
-)
 
 const rootRoute = {
 	component: 'div',

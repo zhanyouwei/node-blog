@@ -2,13 +2,13 @@ import React,{Component} from "react"
 import { render } from 'react-dom'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from './../actions/index'
+import * as actions from './../../actions/index'
 import { Link, IndexLink} from 'react-router'
-import NoLoginTop from './../components/noLoginTop'
-import LoginIngTop from './../components/loginIngTop'
+import NoLoginTop from './../noLoginTop'
+import LoginIngTop from './../loginIngTop'
 import {hashHistory } from 'react-router'
 
-import Header from './../components/header/header';
+import Header from './../header/header';
 
 class Nav extends Component {
 	constructor(props) {

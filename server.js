@@ -258,7 +258,6 @@ Upload.getOne=function(name,day,title,callback){
                 return callback(err);
               }
             })
-        console.log("oneDoc======>:",oneDoc)
         callback(null, oneDoc)
         }
       })

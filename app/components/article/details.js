@@ -6,19 +6,22 @@ import {markdown} from 'markdown';
 
 import * as actions from '../../actions/index';
 
+import './details.less';
+
 const MessageItem = ({data})=> {
 	return <div className="messageItem">
 		<div className="messageAuthor"><span className="author">{data.name}：说</span></div>
 		<div className="messageContent">{data.message}</div>
 		<div className="messageTime"><span>{data.time}</span></div>
 	</div>
-}
+};
+
 export class DetailsComponent extends Component {
 	constructor(props) {
-		super(props)
-		this.name
-		this.email
-		this.message
+		super(props);
+		this.name;
+		this.email;
+		this.message;
 	}
 
 	componentWillMount() {
@@ -49,8 +52,8 @@ export class DetailsComponent extends Component {
 
 	render() {
 		let data = this.props.details;
-		let img = data.upload ? ("<img src=http://139.224.74.133:8080/" + data.upload + "></img>") : ""
-		let messageItemTmp = []
+		let img = data.upload ? ("<img src=http://139.224.74.133:8080/" + data.upload + "></img>") : "";
+		let messageItemTmp = [];
 		if (data.comments) {
 			for (let len = data.comments.length, i = len - 1; i >= 0; i--) {
 				messageItemTmp.push(<MessageItem key={i} data={data.comments[i]}/>)
@@ -58,47 +61,58 @@ export class DetailsComponent extends Component {
 		} else {
 			messageItemTmp = "暂无留言"
 		}
-		if(!data.neirong) {
+		if (!data.neirong) {
 			console.log(data);
-			return(<div></div>);
+			return (<div></div>);
 		}
-		return <div className="articleDetails">
-			<h1>{data.title}</h1>
-			<div className="info">作者：{data.name} 阅读量：{data.pv} 发布时间：{data.time ? data.time.minute : ""}</div>
-			<div className="main">
-				<div className="coverImg" dangerouslySetInnerHTML={{__html:img}}></div>
-				<div className="" dangerouslySetInnerHTML={{__html:markdown.toHTML(data.neirong)}}>
-				</div>
-			</div>
-			<div className="messageBox">
-				<h2 className="messageEd">留言区</h2>
-				{messageItemTmp}
-				<h2 className="messageIng">发布评论</h2>
-				<div className="formItem">
-					<span className="name">姓名：</span>
-					<div className="inputDiv">
-						<input type="text" name="name" ref={el=>{this.name=el}} placeholder="最少2位数"/>
+		return (
+			<div className="article-details">
+				<header className="article-info clearfix">
+					<h1>{data.title}</h1>
+					<p className="article-author">
+						By <a href="http://zhanyouwei.github.io" title={data.name}>{data.name}</a>
+					</p>
+					<p className="article-time">
+						阅读量：{data.pv} &nbsp;
+						发布时间：{data.time ? data.time.minute : ""}
+					</p>
+				</header>
+
+				<div className="article-content">
+					<div className="coverImg" dangerouslySetInnerHTML={{__html:img}}></div>
+					<div className="" dangerouslySetInnerHTML={{__html:markdown.toHTML(data.neirong)}}>
 					</div>
 				</div>
-				<div className="formItem">
-					<span className="name">邮箱：</span>
-					<div className="inputDiv">
-						<input type="email" name="email" ref={el=>{this.email=el}}/>
+				<div className="messageBox">
+					<h2 className="messageEd">留言区</h2>
+					{messageItemTmp}
+					<h2 className="messageIng">发布评论</h2>
+					<div className="formItem">
+						<span className="name">姓名：</span>
+						<div className="inputDiv">
+							<input type="text" name="name" ref={el=>{this.name=el}} placeholder="最少2位数"/>
+						</div>
 					</div>
-				</div>
-				<div className="formItem">
-					<span className="name">留言：</span>
-					<div className="inputDiv">
+					<div className="formItem">
+						<span className="name">邮箱：</span>
+						<div className="inputDiv">
+							<input type="email" name="email" ref={el=>{this.email=el}}/>
+						</div>
+					</div>
+					<div className="formItem">
+						<span className="name">留言：</span>
+						<div className="inputDiv">
 						<textarea name="message" id="" cols="30" rows="5" placeholder="说点什么呢"
 						          ref={el=>{this.message=el}}></textarea>
+						</div>
 					</div>
+					<div className="btn" onClick={()=>{this.commentsSubmit()}}>提交</div>
 				</div>
-				<div className="btn" onClick={()=>{this.commentsSubmit()}}>提交</div>
+				{/*data.map(function(el,i){
+				 return <div key={i}>{el.a}</div>
+				 })*/}
 			</div>
-			{/*data.map(function(el,i){
-			 return <div key={i}>{el.a}</div>
-			 })*/}
-		</div>
+		)
 	}
 }
 

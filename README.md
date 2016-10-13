@@ -1,19 +1,18 @@
-# blog
+# Node.js Blog
 
-blog在线预览地址：http://139.224.74.133
 
  前端: react+redux+react-router
  
  后端: node+express+mongoDB提供的API
- 
- 前后端完全分离
 
-### 开始 
-1.安装 nodejs(>=4) 
-2.启动mongodb
 
-### 运行
-    git clone https://github.com/hechuanhua/blog.git
+## 开始 
+
+1. 安装 nodejs(>=4) 
+2. 启动mongodb
+
+## 运行
+
     npm install
     
     开发环境===>
